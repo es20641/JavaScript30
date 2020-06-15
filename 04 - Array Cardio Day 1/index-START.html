@@ -73,10 +73,10 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
-      var fifteens = inventors.filter((inventor) => {
-        return inventor.year >= 1500 && inventor.year < 1600;
-      });
-      console.table(fifteens);
+      // var fifteens = inventors.filter((inventor) => {
+      //   return inventor.year >= 1500 && inventor.year < 1600;
+      // });
+      // console.table(fifteens);
 
       // Array.prototype.map()
       // 2. Give us an array of the inventors first and last names
@@ -132,6 +132,23 @@
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      // Already sorted by last name. Going to sort by first.
+      // const sorted = people.sort(function (a, b) {
+      //   // console.log(a);
+      //   const aSplit = a.split(", ");
+      //   const bSplit = b.split(", ");
+      //   const aFirst = aSplit[1];
+      //   const aLast = aSplit[0];
+      //   const bFirst = bSplit[1];
+      //   const bLast = bSplit[0];
+
+      //   console.log(`Comparing: ${aFirst} against ${bFirst}`);
+      //   console.log(aFirst > bFirst);
+
+      //   return aFirst > bFirst ? 1 : -1;
+      // });
+      // console.log("Sorted people");
+      // console.log(sorted)
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
@@ -151,6 +168,15 @@
         "car",
         "truck",
       ];
+
+      const sumData = data.reduce(function (sum, current) {
+        if (!sum[current]) {
+          sum[current] = 0;
+        }
+        sum[current]++;
+        return sum;
+      }, {});
+      console.log(sumData);
     </script>
   </body>
 </html>
